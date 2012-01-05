@@ -1,0 +1,4 @@
+version=3
+
+https://github.com/phihag/mocksmtp/tags .*/tarball/(\d[\d\.]+)
+

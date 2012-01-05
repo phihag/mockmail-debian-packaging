@@ -1,0 +1,5 @@
+mocksmtp (1.1-1) unstable; urgency=low
+
+  * Initial release (Closes: #654421)
+
+ -- Philipp Hagemeister <phihag@phihag.de>  Thu, 05 Jan 2012 16:31:31 +0100
