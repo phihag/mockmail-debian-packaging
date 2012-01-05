@@ -9,6 +9,7 @@ get-orig-source:
 	uscan --noconf --force-download --download-current-version --destdir=.
 	tar xzf $(DEB_UPSTREAM_VERSION) --transform "s#phihag-mocksmtp-[^/]*#mocksmtp-$(DEB_UPSTREAM_VERSION).orig#"
 	rm $(DEB_UPSTREAM_VERSION)
+	rm mocksmtp-$(DEB_UPSTREAM_VERSION).orig/{mocksmtp.init,mocksmtp.1,Makefile} # Remove unneded files
 	tar czf mocksmtp_$(DEB_UPSTREAM_VERSION).orig.tar.gz mocksmtp-$(DEB_UPSTREAM_VERSION).orig
 	rm -r mocksmtp-$(DEB_UPSTREAM_VERSION).orig
 	
