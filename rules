@@ -3,6 +3,7 @@
 
 override_dh_clean:
 	rm -f mocksmtp
+	dh_clean
 
 build:
 	cp mocksmtp.py mocksmtp
