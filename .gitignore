@@ -2,3 +2,6 @@ mocksmtp/
 files
 mocksmtp.debhelper.log
 mocksmtp.substvars
+mocksmtp.postinst.debhelper
+mocksmtp.postrm.debhelper
+mocksmtp.prerm.debhelper

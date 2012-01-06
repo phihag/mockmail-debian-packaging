@@ -1,6 +1,8 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 
+DH_VERBOSE=1
+
 override_dh_clean:
 	rm -f mocksmtp
 	dh_clean
@@ -19,15 +21,16 @@ binary:
 	dh_installman
 	dh_installinfo
 	dh_python2
-	dh_installinit
+	dh_installinit --onlyscripts
 	dh_compress
 	dh_fixperms
 	dh_gencontrol
 	dh_md5sums
 	dh_builddeb
 
-override_dh_installinit:
-	dh_installinit --onlyscripts
+override_dh_pysupport:
+	echo OH REALLY
+
 
 %:
 	dh $@ 
