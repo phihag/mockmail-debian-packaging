@@ -1,6 +1,12 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 
+override_dh_clean:
+	rm -f mocksmtp
+
+build:
+	cp mocksmtp.py mocksmtp
+
 binary:
 	dh_testroot
 	dh_prep
