@@ -1,15 +1,37 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 
+binary:
+	dh_testroot
+	dh_prep
+	dh_installdirs
+	dh_install
+	dh_installdocs
+	dh_installchangelogs
+	dh_installexamples
+	dh_installman
+	dh_installinfo
+	dh_python2
+	dh_installinit
+	dh_compress
+	dh_fixperms
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+override_dh_installinit:
+        dh_installinit --onlyscripts
+
 %:
 	dh $@ 
 
 DEB_UPSTREAM_VERSION=$(shell dpkg-parsechangelog | sed -rne 's,^Version: ([^-]+).*,\1,p')
 get-orig-source:
 	uscan --noconf --force-download --download-current-version --destdir=.
+	rm -rf mocksmtp-$(DEB_UPSTREAM_VERSION).orig
 	tar xzf $(DEB_UPSTREAM_VERSION) --transform "s#phihag-mocksmtp-[^/]*#mocksmtp-$(DEB_UPSTREAM_VERSION).orig#"
 	rm $(DEB_UPSTREAM_VERSION)
-	rm mocksmtp-$(DEB_UPSTREAM_VERSION).orig/{mocksmtp.init,mocksmtp.1,Makefile} # Remove unneded files
+	cd mocksmtp-$(DEB_UPSTREAM_VERSION).orig && rm Makefile # Remove unneded files
 	tar czf mocksmtp_$(DEB_UPSTREAM_VERSION).orig.tar.gz mocksmtp-$(DEB_UPSTREAM_VERSION).orig
 	rm -r mocksmtp-$(DEB_UPSTREAM_VERSION).orig
 	
