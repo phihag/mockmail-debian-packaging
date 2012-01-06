@@ -20,7 +20,7 @@ binary:
 	dh_builddeb
 
 override_dh_installinit:
-        dh_installinit --onlyscripts
+	dh_installinit --onlyscripts
 
 %:
 	dh $@ 
