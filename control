@@ -2,16 +2,16 @@ Source: mocksmtp
 Section: mail
 Priority: extra
 Maintainer: Philipp Hagemeister <phihag@phihag.de>
-Build-Depends: debhelper (>= 8.0.0), python (>= 2.6.6-3~)
+Build-Depends: debhelper (>= 8.0.0), python3
 Standards-Version: 3.9.2
 Homepage: https://github.com/phihag/mocksmtp
 Vcs-Git: git://git@github.com:phihag/mocksmtp.git
 Vcs-Browser: https://github.com/phihag/mocksmtp
-X-Python-Version: >= 2.6
+X-Python-Version: >= 3.0
 
 Package: mocksmtp
 Architecture: any
-Depends: ${misc:Depends}, ${python:Depends}, python-pystache
+Depends: ${misc:Depends}, ${python3:Depends}, python-pystache
 Description: email test server
  An email (SMTP) server that accepts all emails and shows them in a web
  interface.

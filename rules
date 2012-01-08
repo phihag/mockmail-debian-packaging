@@ -6,11 +6,8 @@ override_dh_auto_install:
 	install -D -m0755 mocksmtp.init $(CURDIR)/debian/mocksmtp/etc/init.d/mocksmtp	
 	install -D -m0644 config.production $(CURDIR)/debian/mocksmtp/etc/mocksmtp.conf
 
-override_dh_pysupport:
-	dh_python2
-
 %:
-	dh $@ 
+	dh $@ --without pysupport --with python3
 
 DEB_UPSTREAM_VERSION=$(shell dpkg-parsechangelog | sed -rne 's,^Version: ([^-]+).*,\1,p')
 get-orig-source:
