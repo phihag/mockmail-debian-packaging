@@ -1,4 +1,4 @@
-mocksmtp (1.1-1) unstable; urgency=low
+mocksmtp (1.2-1) unstable; urgency=low
 
   * Initial release (Closes: #654421)
 

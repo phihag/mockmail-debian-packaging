@@ -7,10 +7,11 @@ Standards-Version: 3.9.2
 Homepage: https://github.com/phihag/mocksmtp
 Vcs-Git: git://git@github.com:phihag/mocksmtp.git
 Vcs-Browser: https://github.com/phihag/mocksmtp
+X-Python-Version: >= 2.6
 
 Package: mocksmtp
 Architecture: any
-Depends: ${misc:Depends}, python (>= 2.6), python-pystache
+Depends: ${misc:Depends}, ${python:Depends}, python-pystache
 Description: email test server
  An email (SMTP) server that accepts all emails and shows them in a web
  interface.

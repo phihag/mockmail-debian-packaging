@@ -1,36 +1,13 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 
-DH_VERBOSE=1
-
-override_dh_clean:
-	rm -f mocksmtp
-	dh_clean
-
-build:
-	cp mocksmtp.py mocksmtp
-
-binary:
-	dh_testroot
-	dh_prep
-	dh_installdirs
-	dh_install
-	dh_installdocs
-	dh_installchangelogs
-	dh_installexamples
-	dh_installman
-	dh_installinfo
-	dh_python2
-	dh_installinit --onlyscripts
-	dh_compress
-	dh_fixperms
-	dh_gencontrol
-	dh_md5sums
-	dh_builddeb
+override_dh_auto_install:
+	install -D -m0755 mocksmtp.py $(CURDIR)/debian/mocksmtp/usr/bin/mocksmtp
+	install -D -m0755 mocksmtp.init $(CURDIR)/debian/mocksmtp/etc/init.d/mocksmtp	
+	install -D -m0644 config.production $(CURDIR)/debian/mocksmtp/etc/mocksmtp.conf
 
 override_dh_pysupport:
-	echo OH REALLY
-
+	dh_python2
 
 %:
 	dh $@ 
