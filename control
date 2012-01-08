@@ -11,7 +11,7 @@ X-Python-Version: >= 3.0
 
 Package: mocksmtp
 Architecture: any
-Depends: ${misc:Depends}, ${python3:Depends}, python3-pystache
+Depends: ${misc:Depends}, ${python3:Depends}, python3-pystache, adduser
 Description: email test server
  An email (SMTP) server that accepts all emails and shows them in a web
  interface.
