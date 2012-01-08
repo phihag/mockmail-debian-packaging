@@ -1,0 +1,15 @@
+#!/bin/sh
+# postinst script for mocksmtp
+
+set -e
+
+if [ "$1" = "configure" ]; then
+    if ! getent passwd mocksmtp >/dev/null; then
+        adduser --system --group --quiet --disabled-login \
+            --home /var/run/mocksmtp --no-create-home \
+            mocksmtp   
+    fi
+    service mocksmtp force-reload
+fi
+
+#DEBHELPER#
