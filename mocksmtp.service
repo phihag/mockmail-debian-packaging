@@ -1,0 +1,8 @@
+[Unit]
+Description=email test server
+
+[Service]
+ExecStart=/usr/bin/mocksmtp -c /etc/mocksmtp.conf --interactive
+
+[Install]
+WantedBy=multi-user.target
