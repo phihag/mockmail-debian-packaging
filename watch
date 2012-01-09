@@ -1,4 +1,4 @@
 version=3
 
-https://github.com/phihag/mocksmtp/tags .*/tarball/(\d[\d\.]+)
+https://github.com/phihag/mockmail/tags .*/tarball/(\d[\d\.]+)
 

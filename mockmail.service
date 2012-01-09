@@ -2,7 +2,7 @@
 Description=email test server
 
 [Service]
-ExecStart=/usr/bin/mocksmtp -c /etc/mocksmtp.conf --interactive
+ExecStart=/usr/bin/mockmail -c /etc/mockmail.conf --interactive
 
 [Install]
 WantedBy=multi-user.target

@@ -1,6 +1,6 @@
 Format: http://dep.debian.net/deps/dep5
-Upstream-Name: mocksmtp
-Source: https://github.com/phihag/mocksmtp
+Upstream-Name: mockmail
+Source: https://github.com/phihag/mockmail
 
 Files: *
 Copyright: 2011-2012 Philipp Hagemeister <phihag@phihag.de>

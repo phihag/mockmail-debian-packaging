@@ -1,7 +1,7 @@
-mocksmtp/
+mockmail/
 files
-mocksmtp.debhelper.log
-mocksmtp.substvars
-mocksmtp.postinst.debhelper
-mocksmtp.postrm.debhelper
-mocksmtp.prerm.debhelper
+mockmail.debhelper.log
+mockmail.substvars
+mockmail.postinst.debhelper
+mockmail.postrm.debhelper
+mockmail.prerm.debhelper

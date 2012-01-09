@@ -1,15 +1,15 @@
-Source: mocksmtp
+Source: mockmail
 Section: mail
 Priority: extra
 Maintainer: Philipp Hagemeister <phihag@phihag.de>
 Build-Depends: debhelper (>= 8.0.0), python3
 Standards-Version: 3.9.2
-Homepage: https://github.com/phihag/mocksmtp
-Vcs-Git: git://github.com/phihag/mocksmtp-debian-packaging.git
-Vcs-Browser: https://github.com/phihag/mocksmtp-debian-packaging
+Homepage: https://github.com/phihag/mockmail
+Vcs-Git: git://github.com/phihag/mockmail-debian-packaging.git
+Vcs-Browser: https://github.com/phihag/mockmail-debian-packaging
 X-Python-Version: >= 3.0
 
-Package: mocksmtp
+Package: mockmail
 Architecture: any
 Depends: ${misc:Depends}, ${python3:Depends}, python3-pystache, adduser
 Description: email test server

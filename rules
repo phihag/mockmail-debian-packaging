@@ -5,10 +5,10 @@
 	dh $@ --without python-support --with python3
 
 override_dh_auto_install:
-	install -D -m0755 mocksmtp.py $(CURDIR)/debian/mocksmtp/usr/bin/mocksmtp
-	install -D -m0755 mocksmtp.init $(CURDIR)/debian/mocksmtp/etc/init.d/mocksmtp	
-	install -D -m0644 config.production $(CURDIR)/debian/mocksmtp/etc/mocksmtp.conf
-	install -D -m0644 debian/mocksmtp.service $(CURDIR)/debian/mocksmtp/lib/systemd/system/mocksmtp.service
+	install -D -m0755 mockmail.py $(CURDIR)/debian/mockmail/usr/bin/mockmail
+	install -D -m0755 mockmail.init $(CURDIR)/debian/mockmail/etc/init.d/mockmail	
+	install -D -m0644 config.production $(CURDIR)/debian/mockmail/etc/mockmail.conf
+	install -D -m0644 debian/mockmail.service $(CURDIR)/debian/mockmail/lib/systemd/system/mockmail.service
 
 override_dh_installinit:
 	dh_installinit --onlyscripts
@@ -17,10 +17,10 @@ override_dh_installinit:
 DEB_UPSTREAM_VERSION=$(shell dpkg-parsechangelog | sed -rne 's,^Version: ([^-]+).*,\1,p')
 get-orig-source:
 	uscan --noconf --force-download --download-current-version --destdir=.
-	rm -rf mocksmtp-$(DEB_UPSTREAM_VERSION).orig
-	tar xzf $(DEB_UPSTREAM_VERSION) --transform "s#phihag-mocksmtp-[^/]*#mocksmtp-$(DEB_UPSTREAM_VERSION).orig#"
+	rm -rf mockmail-$(DEB_UPSTREAM_VERSION).orig
+	tar xzf $(DEB_UPSTREAM_VERSION) --transform "s#phihag-mockmail-[^/]*#mockmail-$(DEB_UPSTREAM_VERSION).orig#"
 	rm $(DEB_UPSTREAM_VERSION)
-	cd mocksmtp-$(DEB_UPSTREAM_VERSION).orig && rm Makefile # Remove unneded files
-	tar czf mocksmtp_$(DEB_UPSTREAM_VERSION).orig.tar.gz mocksmtp-$(DEB_UPSTREAM_VERSION).orig
-	rm -r mocksmtp-$(DEB_UPSTREAM_VERSION).orig
+	cd mockmail-$(DEB_UPSTREAM_VERSION).orig && rm Makefile # Remove unneded files
+	tar czf mockmail_$(DEB_UPSTREAM_VERSION).orig.tar.gz mockmail-$(DEB_UPSTREAM_VERSION).orig
+	rm -r mockmail-$(DEB_UPSTREAM_VERSION).orig
 	
